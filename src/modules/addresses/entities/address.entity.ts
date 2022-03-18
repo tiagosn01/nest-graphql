@@ -2,13 +2,22 @@ import { BaseEntity } from 'src/common/base/entities/base.entity';
 import { Column, Entity } from 'typeorm';
 
 @Entity()
-export class Student extends BaseEntity {
+export class Address extends BaseEntity {
   @Column()
   name: string;
 
   @Column()
-  email: string;
+  zipcode: string;
 
   @Column()
-  key: string;
+  state: string;
+
+  @Column()
+  city: string;
+
+  @Column()
+  street: string;
+
+  @Column()
+  number: string;
 }

@@ -2,7 +2,7 @@ import { BaseEntity } from 'src/common/base/entities/base.entity';
 import { Column, Entity } from 'typeorm';
 
 @Entity()
-export class Student extends BaseEntity {
+export class Workplace extends BaseEntity {
   @Column()
   name: string;
 
@@ -10,5 +10,8 @@ export class Student extends BaseEntity {
   email: string;
 
   @Column()
-  key: string;
+  code: string;
+
+  @Column()
+  phone: string;
 }

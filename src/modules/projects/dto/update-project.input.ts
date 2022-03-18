@@ -1,8 +1,8 @@
-import { CreateStudentInput } from './create-student.input';
+import { CreateProjectInput } from './create-project.input';
 import { InputType, Field, PartialType, ID } from '@nestjs/graphql';
 
 @InputType()
-export class UpdateStudentInput extends PartialType(CreateStudentInput) {
+export class UpdateProjectInput extends PartialType(CreateProjectInput) {
   @Field(() => ID, { nullable: true })
   id?: string;
 }

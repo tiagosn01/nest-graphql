@@ -2,14 +2,317 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Address {
+  city: String!
+  createdAt: DateTime!
+  deletedAt: DateTime!
+  id: String!
+  name: String!
+  number: String!
+  state: String!
+  street: String!
+  updatedAt: DateTime!
+  zipcode: String!
+}
+
+type AddressAggregateGroupBy {
+  createdAt: DateTime
+  deletedAt: DateTime
+  updatedAt: DateTime
+  zipcode: String
+}
+
+type AddressConnection {
+  """Array of nodes."""
+  nodes: [Address!]!
+
+  """Paging information"""
+  pageInfo: OffsetPageInfo!
+
+  """Fetch total count of records"""
+  totalCount: Int!
+}
+
+type AddressCountAggregate {
+  createdAt: Int
+  deletedAt: Int
+  updatedAt: Int
+  zipcode: Int
+}
+
+input AddressDeleteFilter {
+  and: [AddressDeleteFilter!]
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
+  or: [AddressDeleteFilter!]
+  updatedAt: DateFieldComparison
+  zipcode: StringFieldComparison
+}
+
+type AddressDeleteResponse {
+  city: String
+  createdAt: DateTime
+  deletedAt: DateTime
+  id: String
+  name: String
+  number: String
+  state: String
+  street: String
+  updatedAt: DateTime
+  zipcode: String
+}
+
+input AddressFilter {
+  and: [AddressFilter!]
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
+  or: [AddressFilter!]
+  updatedAt: DateFieldComparison
+  zipcode: StringFieldComparison
+}
+
+type AddressMaxAggregate {
+  createdAt: DateTime
+  deletedAt: DateTime
+  updatedAt: DateTime
+  zipcode: String
+}
+
+type AddressMinAggregate {
+  createdAt: DateTime
+  deletedAt: DateTime
+  updatedAt: DateTime
+  zipcode: String
+}
+
+input AddressSort {
+  direction: SortDirection!
+  field: AddressSortFields!
+  nulls: SortNulls
+}
+
+enum AddressSortFields {
+  createdAt
+  deletedAt
+  updatedAt
+  zipcode
+}
+
+input AddressUpdateFilter {
+  and: [AddressUpdateFilter!]
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
+  or: [AddressUpdateFilter!]
+  updatedAt: DateFieldComparison
+  zipcode: StringFieldComparison
+}
+
+type AdminsWorkplace {
+  createdAt: DateTime!
+  deletedAt: DateTime!
+  email: String!
+  id: String!
+  is_owner: Boolean!
+  name: String!
+  phone: String!
+  updatedAt: DateTime!
+}
+
+type AdminsWorkplaceAggregateGroupBy {
+  createdAt: DateTime
+  deletedAt: DateTime
+  email: String
+  name: String
+  updatedAt: DateTime
+}
+
+type AdminsWorkplaceConnection {
+  """Array of nodes."""
+  nodes: [AdminsWorkplace!]!
+
+  """Paging information"""
+  pageInfo: OffsetPageInfo!
+
+  """Fetch total count of records"""
+  totalCount: Int!
+}
+
+type AdminsWorkplaceCountAggregate {
+  createdAt: Int
+  deletedAt: Int
+  email: Int
+  name: Int
+  updatedAt: Int
+}
+
+input AdminsWorkplaceDeleteFilter {
+  and: [AdminsWorkplaceDeleteFilter!]
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
+  email: StringFieldComparison
+  name: StringFieldComparison
+  or: [AdminsWorkplaceDeleteFilter!]
+  updatedAt: DateFieldComparison
+}
+
+type AdminsWorkplaceDeleteResponse {
+  createdAt: DateTime
+  deletedAt: DateTime
+  email: String
+  id: String
+  is_owner: Boolean
+  name: String
+  phone: String
+  updatedAt: DateTime
+}
+
+input AdminsWorkplaceFilter {
+  and: [AdminsWorkplaceFilter!]
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
+  email: StringFieldComparison
+  name: StringFieldComparison
+  or: [AdminsWorkplaceFilter!]
+  updatedAt: DateFieldComparison
+}
+
+type AdminsWorkplaceMaxAggregate {
+  createdAt: DateTime
+  deletedAt: DateTime
+  email: String
+  name: String
+  updatedAt: DateTime
+}
+
+type AdminsWorkplaceMinAggregate {
+  createdAt: DateTime
+  deletedAt: DateTime
+  email: String
+  name: String
+  updatedAt: DateTime
+}
+
+input AdminsWorkplaceSort {
+  direction: SortDirection!
+  field: AdminsWorkplaceSortFields!
+  nulls: SortNulls
+}
+
+enum AdminsWorkplaceSortFields {
+  createdAt
+  deletedAt
+  email
+  name
+  updatedAt
+}
+
+input AdminsWorkplaceUpdateFilter {
+  and: [AdminsWorkplaceUpdateFilter!]
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
+  email: StringFieldComparison
+  name: StringFieldComparison
+  or: [AdminsWorkplaceUpdateFilter!]
+  updatedAt: DateFieldComparison
+}
+
+input CreateAddressInput {
+  city: String!
+  name: String!
+  number: String!
+  state: String!
+  street: String!
+  zipcode: String!
+}
+
+input CreateAdminsWorkplaceInput {
+  email: String!
+  is_owner: Boolean!
+  name: String!
+  phone: String!
+}
+
+input CreateManyAddressesInput {
+  """Array of records to create"""
+  addresses: [CreateAddressInput!]!
+}
+
+input CreateManyAdminsWorkplacesInput {
+  """Array of records to create"""
+  adminsWorkplaces: [CreateAdminsWorkplaceInput!]!
+}
+
+input CreateManyProjectsInput {
+  """Array of records to create"""
+  projects: [CreateProjectInput!]!
+}
+
+input CreateManySpecialtiesInput {
+  """Array of records to create"""
+  specialties: [CreateSpecialtyInput!]!
+}
+
 input CreateManyStudentsInput {
   """Array of records to create"""
   students: [CreateStudentInput!]!
 }
 
+input CreateManyUniversitiesInput {
+  """Array of records to create"""
+  universities: [CreateUniversityInput!]!
+}
+
+input CreateManyWorkplacesInput {
+  """Array of records to create"""
+  workplaces: [CreateWorkplaceInput!]!
+}
+
+input CreateOneAddressInput {
+  """The record to create"""
+  address: CreateAddressInput!
+}
+
+input CreateOneAdminsWorkplaceInput {
+  """The record to create"""
+  adminsWorkplace: CreateAdminsWorkplaceInput!
+}
+
+input CreateOneProjectInput {
+  """The record to create"""
+  project: CreateProjectInput!
+}
+
+input CreateOneSpecialtyInput {
+  """The record to create"""
+  specialty: CreateSpecialtyInput!
+}
+
 input CreateOneStudentInput {
   """The record to create"""
   student: CreateStudentInput!
+}
+
+input CreateOneUniversityInput {
+  """The record to create"""
+  university: CreateUniversityInput!
+}
+
+input CreateOneWorkplaceInput {
+  """The record to create"""
+  workplace: CreateWorkplaceInput!
+}
+
+input CreateProjectInput {
+  area: String!
+  description: String!
+  name: String!
+  title: String!
+}
+
+input CreateSpecialtyInput {
+  area: String!
+  description: String!
+  name: String!
 }
 
 input CreateStudentInput {
@@ -18,9 +321,68 @@ input CreateStudentInput {
   name: String!
 }
 
+input CreateUniversityInput {
+  code: String!
+  email: String!
+  name: String!
+  phone: String!
+}
+
+input CreateWorkplaceInput {
+  code: String!
+  email: String!
+  name: String!
+  phone: String!
+}
+
+input DateFieldComparison {
+  between: DateFieldComparisonBetween
+  eq: DateTime
+  gt: DateTime
+  gte: DateTime
+  in: [DateTime!]
+  is: Boolean
+  isNot: Boolean
+  lt: DateTime
+  lte: DateTime
+  neq: DateTime
+  notBetween: DateFieldComparisonBetween
+  notIn: [DateTime!]
+}
+
+input DateFieldComparisonBetween {
+  lower: DateTime!
+  upper: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+input DeleteManyAddressesInput {
+  """Filter to find records to delete"""
+  filter: AddressDeleteFilter!
+}
+
+input DeleteManyAdminsWorkplacesInput {
+  """Filter to find records to delete"""
+  filter: AdminsWorkplaceDeleteFilter!
+}
+
+input DeleteManyProjectsInput {
+  """Filter to find records to delete"""
+  filter: ProjectDeleteFilter!
+}
+
 type DeleteManyResponse {
   """The number of records deleted."""
   deletedCount: Int!
+}
+
+input DeleteManySpecialtiesInput {
+  """Filter to find records to delete"""
+  filter: SpecialtyDeleteFilter!
 }
 
 input DeleteManyStudentsInput {
@@ -28,18 +390,94 @@ input DeleteManyStudentsInput {
   filter: StudentDeleteFilter!
 }
 
+input DeleteManyUniversitiesInput {
+  """Filter to find records to delete"""
+  filter: UniversityDeleteFilter!
+}
+
+input DeleteManyWorkplacesInput {
+  """Filter to find records to delete"""
+  filter: WorkplaceDeleteFilter!
+}
+
+input DeleteOneAddressInput {
+  """The id of the record to delete."""
+  id: ID!
+}
+
+input DeleteOneAdminsWorkplaceInput {
+  """The id of the record to delete."""
+  id: ID!
+}
+
+input DeleteOneProjectInput {
+  """The id of the record to delete."""
+  id: ID!
+}
+
+input DeleteOneSpecialtyInput {
+  """The id of the record to delete."""
+  id: ID!
+}
+
 input DeleteOneStudentInput {
   """The id of the record to delete."""
   id: ID!
 }
 
+input DeleteOneUniversityInput {
+  """The id of the record to delete."""
+  id: ID!
+}
+
+input DeleteOneWorkplaceInput {
+  """The id of the record to delete."""
+  id: ID!
+}
+
 type Mutation {
+  createManyAddresses(input: CreateManyAddressesInput!): [Address!]!
+  createManyAdminsWorkplaces(input: CreateManyAdminsWorkplacesInput!): [AdminsWorkplace!]!
+  createManyProjects(input: CreateManyProjectsInput!): [Project!]!
+  createManySpecialties(input: CreateManySpecialtiesInput!): [Specialty!]!
   createManyStudents(input: CreateManyStudentsInput!): [Student!]!
+  createManyUniversities(input: CreateManyUniversitiesInput!): [University!]!
+  createManyWorkplaces(input: CreateManyWorkplacesInput!): [Workplace!]!
+  createOneAddress(input: CreateOneAddressInput!): Address!
+  createOneAdminsWorkplace(input: CreateOneAdminsWorkplaceInput!): AdminsWorkplace!
+  createOneProject(input: CreateOneProjectInput!): Project!
+  createOneSpecialty(input: CreateOneSpecialtyInput!): Specialty!
   createOneStudent(input: CreateOneStudentInput!): Student!
+  createOneUniversity(input: CreateOneUniversityInput!): University!
+  createOneWorkplace(input: CreateOneWorkplaceInput!): Workplace!
+  deleteManyAddresses(input: DeleteManyAddressesInput!): DeleteManyResponse!
+  deleteManyAdminsWorkplaces(input: DeleteManyAdminsWorkplacesInput!): DeleteManyResponse!
+  deleteManyProjects(input: DeleteManyProjectsInput!): DeleteManyResponse!
+  deleteManySpecialties(input: DeleteManySpecialtiesInput!): DeleteManyResponse!
   deleteManyStudents(input: DeleteManyStudentsInput!): DeleteManyResponse!
+  deleteManyUniversities(input: DeleteManyUniversitiesInput!): DeleteManyResponse!
+  deleteManyWorkplaces(input: DeleteManyWorkplacesInput!): DeleteManyResponse!
+  deleteOneAddress(input: DeleteOneAddressInput!): AddressDeleteResponse!
+  deleteOneAdminsWorkplace(input: DeleteOneAdminsWorkplaceInput!): AdminsWorkplaceDeleteResponse!
+  deleteOneProject(input: DeleteOneProjectInput!): ProjectDeleteResponse!
+  deleteOneSpecialty(input: DeleteOneSpecialtyInput!): SpecialtyDeleteResponse!
   deleteOneStudent(input: DeleteOneStudentInput!): StudentDeleteResponse!
+  deleteOneUniversity(input: DeleteOneUniversityInput!): UniversityDeleteResponse!
+  deleteOneWorkplace(input: DeleteOneWorkplaceInput!): WorkplaceDeleteResponse!
+  updateManyAddresses(input: UpdateManyAddressesInput!): UpdateManyResponse!
+  updateManyAdminsWorkplaces(input: UpdateManyAdminsWorkplacesInput!): UpdateManyResponse!
+  updateManyProjects(input: UpdateManyProjectsInput!): UpdateManyResponse!
+  updateManySpecialties(input: UpdateManySpecialtiesInput!): UpdateManyResponse!
   updateManyStudents(input: UpdateManyStudentsInput!): UpdateManyResponse!
+  updateManyUniversities(input: UpdateManyUniversitiesInput!): UpdateManyResponse!
+  updateManyWorkplaces(input: UpdateManyWorkplacesInput!): UpdateManyResponse!
+  updateOneAddress(input: UpdateOneAddressInput!): Address!
+  updateOneAdminsWorkplace(input: UpdateOneAdminsWorkplaceInput!): AdminsWorkplace!
+  updateOneProject(input: UpdateOneProjectInput!): Project!
+  updateOneSpecialty(input: UpdateOneSpecialtyInput!): Specialty!
   updateOneStudent(input: UpdateOneStudentInput!): Student!
+  updateOneUniversity(input: UpdateOneUniversityInput!): University!
+  updateOneWorkplace(input: UpdateOneWorkplaceInput!): Workplace!
 }
 
 type OffsetPageInfo {
@@ -58,7 +496,180 @@ input OffsetPaging {
   offset: Int
 }
 
+type Project {
+  area: String!
+  createdAt: DateTime!
+  deletedAt: DateTime!
+  description: String!
+  id: String!
+  name: String!
+  title: String!
+  updatedAt: DateTime!
+}
+
+type ProjectAggregateGroupBy {
+  area: String
+  createdAt: DateTime
+  deletedAt: DateTime
+  name: String
+  title: String
+  updatedAt: DateTime
+}
+
+type ProjectConnection {
+  """Array of nodes."""
+  nodes: [Project!]!
+
+  """Paging information"""
+  pageInfo: OffsetPageInfo!
+
+  """Fetch total count of records"""
+  totalCount: Int!
+}
+
+type ProjectCountAggregate {
+  area: Int
+  createdAt: Int
+  deletedAt: Int
+  name: Int
+  title: Int
+  updatedAt: Int
+}
+
+input ProjectDeleteFilter {
+  and: [ProjectDeleteFilter!]
+  area: StringFieldComparison
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
+  name: StringFieldComparison
+  or: [ProjectDeleteFilter!]
+  title: StringFieldComparison
+  updatedAt: DateFieldComparison
+}
+
+type ProjectDeleteResponse {
+  area: String
+  createdAt: DateTime
+  deletedAt: DateTime
+  description: String
+  id: String
+  name: String
+  title: String
+  updatedAt: DateTime
+}
+
+input ProjectFilter {
+  and: [ProjectFilter!]
+  area: StringFieldComparison
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
+  name: StringFieldComparison
+  or: [ProjectFilter!]
+  title: StringFieldComparison
+  updatedAt: DateFieldComparison
+}
+
+type ProjectMaxAggregate {
+  area: String
+  createdAt: DateTime
+  deletedAt: DateTime
+  name: String
+  title: String
+  updatedAt: DateTime
+}
+
+type ProjectMinAggregate {
+  area: String
+  createdAt: DateTime
+  deletedAt: DateTime
+  name: String
+  title: String
+  updatedAt: DateTime
+}
+
+input ProjectSort {
+  direction: SortDirection!
+  field: ProjectSortFields!
+  nulls: SortNulls
+}
+
+enum ProjectSortFields {
+  area
+  createdAt
+  deletedAt
+  name
+  title
+  updatedAt
+}
+
+input ProjectUpdateFilter {
+  and: [ProjectUpdateFilter!]
+  area: StringFieldComparison
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
+  name: StringFieldComparison
+  or: [ProjectUpdateFilter!]
+  title: StringFieldComparison
+  updatedAt: DateFieldComparison
+}
+
 type Query {
+  address(
+    """The id of the record to find."""
+    id: ID!
+  ): Address
+  addresses(
+    """Specify to filter the records returned."""
+    filter: AddressFilter = {}
+
+    """Limit or page results."""
+    paging: OffsetPaging = {limit: 10}
+
+    """Specify to sort results."""
+    sorting: [AddressSort!] = []
+  ): AddressConnection!
+  adminsWorkplace(
+    """The id of the record to find."""
+    id: ID!
+  ): AdminsWorkplace
+  adminsWorkplaces(
+    """Specify to filter the records returned."""
+    filter: AdminsWorkplaceFilter = {}
+
+    """Limit or page results."""
+    paging: OffsetPaging = {limit: 10}
+
+    """Specify to sort results."""
+    sorting: [AdminsWorkplaceSort!] = []
+  ): AdminsWorkplaceConnection!
+  project(
+    """The id of the record to find."""
+    id: ID!
+  ): Project
+  projects(
+    """Specify to filter the records returned."""
+    filter: ProjectFilter = {}
+
+    """Limit or page results."""
+    paging: OffsetPaging = {limit: 10}
+
+    """Specify to sort results."""
+    sorting: [ProjectSort!] = []
+  ): ProjectConnection!
+  specialties(
+    """Specify to filter the records returned."""
+    filter: SpecialtyFilter = {}
+
+    """Limit or page results."""
+    paging: OffsetPaging = {limit: 10}
+
+    """Specify to sort results."""
+    sorting: [SpecialtySort!] = []
+  ): SpecialtyConnection!
+  specialty(
+    """The id of the record to find."""
+    id: ID!
+  ): Specialty
   student(
     """The id of the record to find."""
     id: ID!
@@ -73,6 +684,34 @@ type Query {
     """Specify to sort results."""
     sorting: [StudentSort!] = []
   ): StudentConnection!
+  universities(
+    """Specify to filter the records returned."""
+    filter: UniversityFilter = {}
+
+    """Limit or page results."""
+    paging: OffsetPaging = {limit: 10}
+
+    """Specify to sort results."""
+    sorting: [UniversitySort!] = []
+  ): UniversityConnection!
+  university(
+    """The id of the record to find."""
+    id: ID!
+  ): University
+  workplace(
+    """The id of the record to find."""
+    id: ID!
+  ): Workplace
+  workplaces(
+    """Specify to filter the records returned."""
+    filter: WorkplaceFilter = {}
+
+    """Limit or page results."""
+    paging: OffsetPaging = {limit: 10}
+
+    """Specify to sort results."""
+    sorting: [WorkplaceSort!] = []
+  ): WorkplaceConnection!
 }
 
 """Sort Directions"""
@@ -85,6 +724,113 @@ enum SortDirection {
 enum SortNulls {
   NULLS_FIRST
   NULLS_LAST
+}
+
+type Specialty {
+  area: String!
+  createdAt: DateTime!
+  deletedAt: DateTime!
+  description: String!
+  id: String!
+  name: String!
+  updatedAt: DateTime!
+}
+
+type SpecialtyAggregateGroupBy {
+  area: String
+  createdAt: DateTime
+  deletedAt: DateTime
+  name: String
+  updatedAt: DateTime
+}
+
+type SpecialtyConnection {
+  """Array of nodes."""
+  nodes: [Specialty!]!
+
+  """Paging information"""
+  pageInfo: OffsetPageInfo!
+
+  """Fetch total count of records"""
+  totalCount: Int!
+}
+
+type SpecialtyCountAggregate {
+  area: Int
+  createdAt: Int
+  deletedAt: Int
+  name: Int
+  updatedAt: Int
+}
+
+input SpecialtyDeleteFilter {
+  and: [SpecialtyDeleteFilter!]
+  area: StringFieldComparison
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
+  name: StringFieldComparison
+  or: [SpecialtyDeleteFilter!]
+  updatedAt: DateFieldComparison
+}
+
+type SpecialtyDeleteResponse {
+  area: String
+  createdAt: DateTime
+  deletedAt: DateTime
+  description: String
+  id: String
+  name: String
+  updatedAt: DateTime
+}
+
+input SpecialtyFilter {
+  and: [SpecialtyFilter!]
+  area: StringFieldComparison
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
+  name: StringFieldComparison
+  or: [SpecialtyFilter!]
+  updatedAt: DateFieldComparison
+}
+
+type SpecialtyMaxAggregate {
+  area: String
+  createdAt: DateTime
+  deletedAt: DateTime
+  name: String
+  updatedAt: DateTime
+}
+
+type SpecialtyMinAggregate {
+  area: String
+  createdAt: DateTime
+  deletedAt: DateTime
+  name: String
+  updatedAt: DateTime
+}
+
+input SpecialtySort {
+  direction: SortDirection!
+  field: SpecialtySortFields!
+  nulls: SortNulls
+}
+
+enum SpecialtySortFields {
+  area
+  createdAt
+  deletedAt
+  name
+  updatedAt
+}
+
+input SpecialtyUpdateFilter {
+  and: [SpecialtyUpdateFilter!]
+  area: StringFieldComparison
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
+  name: StringFieldComparison
+  or: [SpecialtyUpdateFilter!]
+  updatedAt: DateFieldComparison
 }
 
 input StringFieldComparison {
@@ -105,16 +851,22 @@ input StringFieldComparison {
 }
 
 type Student {
+  createdAt: DateTime!
+  deletedAt: DateTime!
   email: String!
   id: String!
   key: String!
   name: String!
+  updatedAt: DateTime!
 }
 
 type StudentAggregateGroupBy {
+  createdAt: DateTime
+  deletedAt: DateTime
   email: String
   key: String
   name: String
+  updatedAt: DateTime
 }
 
 type StudentConnection {
@@ -129,44 +881,62 @@ type StudentConnection {
 }
 
 type StudentCountAggregate {
+  createdAt: Int
+  deletedAt: Int
   email: Int
   key: Int
   name: Int
+  updatedAt: Int
 }
 
 input StudentDeleteFilter {
   and: [StudentDeleteFilter!]
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
   email: StringFieldComparison
   key: StringFieldComparison
   name: StringFieldComparison
   or: [StudentDeleteFilter!]
+  updatedAt: DateFieldComparison
 }
 
 type StudentDeleteResponse {
+  createdAt: DateTime
+  deletedAt: DateTime
   email: String
   id: String
   key: String
   name: String
+  updatedAt: DateTime
 }
 
 input StudentFilter {
   and: [StudentFilter!]
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
   email: StringFieldComparison
   key: StringFieldComparison
   name: StringFieldComparison
   or: [StudentFilter!]
+  updatedAt: DateFieldComparison
 }
 
 type StudentMaxAggregate {
+  createdAt: DateTime
+  deletedAt: DateTime
   email: String
   key: String
   name: String
+  updatedAt: DateTime
 }
 
 type StudentMinAggregate {
+  createdAt: DateTime
+  deletedAt: DateTime
   email: String
   key: String
   name: String
+  updatedAt: DateTime
 }
 
 input StudentSort {
@@ -176,22 +946,203 @@ input StudentSort {
 }
 
 enum StudentSortFields {
+  createdAt
+  deletedAt
   email
   key
   name
+  updatedAt
 }
 
 input StudentUpdateFilter {
   and: [StudentUpdateFilter!]
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
   email: StringFieldComparison
   key: StringFieldComparison
   name: StringFieldComparison
   or: [StudentUpdateFilter!]
+  updatedAt: DateFieldComparison
+}
+
+type University {
+  code: String!
+  createdAt: DateTime!
+  deletedAt: DateTime!
+  email: String!
+  id: String!
+  name: String!
+  phone: String!
+  updatedAt: DateTime!
+}
+
+type UniversityAggregateGroupBy {
+  code: String
+  createdAt: DateTime
+  deletedAt: DateTime
+  email: String
+  name: String
+  phone: String
+  updatedAt: DateTime
+}
+
+type UniversityConnection {
+  """Array of nodes."""
+  nodes: [University!]!
+
+  """Paging information"""
+  pageInfo: OffsetPageInfo!
+
+  """Fetch total count of records"""
+  totalCount: Int!
+}
+
+type UniversityCountAggregate {
+  code: Int
+  createdAt: Int
+  deletedAt: Int
+  email: Int
+  name: Int
+  phone: Int
+  updatedAt: Int
+}
+
+input UniversityDeleteFilter {
+  and: [UniversityDeleteFilter!]
+  code: StringFieldComparison
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
+  email: StringFieldComparison
+  name: StringFieldComparison
+  or: [UniversityDeleteFilter!]
+  phone: StringFieldComparison
+  updatedAt: DateFieldComparison
+}
+
+type UniversityDeleteResponse {
+  code: String
+  createdAt: DateTime
+  deletedAt: DateTime
+  email: String
+  id: String
+  name: String
+  phone: String
+  updatedAt: DateTime
+}
+
+input UniversityFilter {
+  and: [UniversityFilter!]
+  code: StringFieldComparison
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
+  email: StringFieldComparison
+  name: StringFieldComparison
+  or: [UniversityFilter!]
+  phone: StringFieldComparison
+  updatedAt: DateFieldComparison
+}
+
+type UniversityMaxAggregate {
+  code: String
+  createdAt: DateTime
+  deletedAt: DateTime
+  email: String
+  name: String
+  phone: String
+  updatedAt: DateTime
+}
+
+type UniversityMinAggregate {
+  code: String
+  createdAt: DateTime
+  deletedAt: DateTime
+  email: String
+  name: String
+  phone: String
+  updatedAt: DateTime
+}
+
+input UniversitySort {
+  direction: SortDirection!
+  field: UniversitySortFields!
+  nulls: SortNulls
+}
+
+enum UniversitySortFields {
+  code
+  createdAt
+  deletedAt
+  email
+  name
+  phone
+  updatedAt
+}
+
+input UniversityUpdateFilter {
+  and: [UniversityUpdateFilter!]
+  code: StringFieldComparison
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
+  email: StringFieldComparison
+  name: StringFieldComparison
+  or: [UniversityUpdateFilter!]
+  phone: StringFieldComparison
+  updatedAt: DateFieldComparison
+}
+
+input UpdateAddressInput {
+  city: String
+  id: ID
+  name: String
+  number: String
+  state: String
+  street: String
+  zipcode: String
+}
+
+input UpdateAdminsWorkplaceInput {
+  email: String
+  id: ID
+  is_owner: Boolean
+  name: String
+  phone: String
+}
+
+input UpdateManyAddressesInput {
+  """Filter used to find fields to update"""
+  filter: AddressUpdateFilter!
+
+  """The update to apply to all records found using the filter"""
+  update: UpdateAddressInput!
+}
+
+input UpdateManyAdminsWorkplacesInput {
+  """Filter used to find fields to update"""
+  filter: AdminsWorkplaceUpdateFilter!
+
+  """The update to apply to all records found using the filter"""
+  update: UpdateAdminsWorkplaceInput!
+}
+
+input UpdateManyProjectsInput {
+  """Filter used to find fields to update"""
+  filter: ProjectUpdateFilter!
+
+  """The update to apply to all records found using the filter"""
+  update: UpdateProjectInput!
 }
 
 type UpdateManyResponse {
   """The number of records updated."""
   updatedCount: Int!
+}
+
+input UpdateManySpecialtiesInput {
+  """Filter used to find fields to update"""
+  filter: SpecialtyUpdateFilter!
+
+  """The update to apply to all records found using the filter"""
+  update: UpdateSpecialtyInput!
 }
 
 input UpdateManyStudentsInput {
@@ -202,6 +1153,54 @@ input UpdateManyStudentsInput {
   update: UpdateStudentInput!
 }
 
+input UpdateManyUniversitiesInput {
+  """Filter used to find fields to update"""
+  filter: UniversityUpdateFilter!
+
+  """The update to apply to all records found using the filter"""
+  update: UpdateUniversityInput!
+}
+
+input UpdateManyWorkplacesInput {
+  """Filter used to find fields to update"""
+  filter: WorkplaceUpdateFilter!
+
+  """The update to apply to all records found using the filter"""
+  update: UpdateWorkplaceInput!
+}
+
+input UpdateOneAddressInput {
+  """The id of the record to update"""
+  id: ID!
+
+  """The update to apply."""
+  update: UpdateAddressInput!
+}
+
+input UpdateOneAdminsWorkplaceInput {
+  """The id of the record to update"""
+  id: ID!
+
+  """The update to apply."""
+  update: UpdateAdminsWorkplaceInput!
+}
+
+input UpdateOneProjectInput {
+  """The id of the record to update"""
+  id: ID!
+
+  """The update to apply."""
+  update: UpdateProjectInput!
+}
+
+input UpdateOneSpecialtyInput {
+  """The id of the record to update"""
+  id: ID!
+
+  """The update to apply."""
+  update: UpdateSpecialtyInput!
+}
+
 input UpdateOneStudentInput {
   """The id of the record to update"""
   id: ID!
@@ -210,9 +1209,181 @@ input UpdateOneStudentInput {
   update: UpdateStudentInput!
 }
 
+input UpdateOneUniversityInput {
+  """The id of the record to update"""
+  id: ID!
+
+  """The update to apply."""
+  update: UpdateUniversityInput!
+}
+
+input UpdateOneWorkplaceInput {
+  """The id of the record to update"""
+  id: ID!
+
+  """The update to apply."""
+  update: UpdateWorkplaceInput!
+}
+
+input UpdateProjectInput {
+  area: String
+  description: String
+  id: ID
+  name: String
+  title: String
+}
+
+input UpdateSpecialtyInput {
+  area: String
+  description: String
+  id: ID
+  name: String
+}
+
 input UpdateStudentInput {
   email: String
-  id: String!
+  id: ID
   key: String
   name: String
+}
+
+input UpdateUniversityInput {
+  code: String
+  email: String
+  id: ID
+  name: String
+  phone: String
+}
+
+input UpdateWorkplaceInput {
+  code: String
+  email: String
+  id: ID
+  name: String
+  phone: String
+}
+
+type Workplace {
+  code: String!
+  createdAt: DateTime!
+  deletedAt: DateTime!
+  email: String!
+  id: String!
+  name: String!
+  phone: String!
+  updatedAt: DateTime!
+}
+
+type WorkplaceAggregateGroupBy {
+  code: String
+  createdAt: DateTime
+  deletedAt: DateTime
+  email: String
+  name: String
+  phone: String
+  updatedAt: DateTime
+}
+
+type WorkplaceConnection {
+  """Array of nodes."""
+  nodes: [Workplace!]!
+
+  """Paging information"""
+  pageInfo: OffsetPageInfo!
+
+  """Fetch total count of records"""
+  totalCount: Int!
+}
+
+type WorkplaceCountAggregate {
+  code: Int
+  createdAt: Int
+  deletedAt: Int
+  email: Int
+  name: Int
+  phone: Int
+  updatedAt: Int
+}
+
+input WorkplaceDeleteFilter {
+  and: [WorkplaceDeleteFilter!]
+  code: StringFieldComparison
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
+  email: StringFieldComparison
+  name: StringFieldComparison
+  or: [WorkplaceDeleteFilter!]
+  phone: StringFieldComparison
+  updatedAt: DateFieldComparison
+}
+
+type WorkplaceDeleteResponse {
+  code: String
+  createdAt: DateTime
+  deletedAt: DateTime
+  email: String
+  id: String
+  name: String
+  phone: String
+  updatedAt: DateTime
+}
+
+input WorkplaceFilter {
+  and: [WorkplaceFilter!]
+  code: StringFieldComparison
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
+  email: StringFieldComparison
+  name: StringFieldComparison
+  or: [WorkplaceFilter!]
+  phone: StringFieldComparison
+  updatedAt: DateFieldComparison
+}
+
+type WorkplaceMaxAggregate {
+  code: String
+  createdAt: DateTime
+  deletedAt: DateTime
+  email: String
+  name: String
+  phone: String
+  updatedAt: DateTime
+}
+
+type WorkplaceMinAggregate {
+  code: String
+  createdAt: DateTime
+  deletedAt: DateTime
+  email: String
+  name: String
+  phone: String
+  updatedAt: DateTime
+}
+
+input WorkplaceSort {
+  direction: SortDirection!
+  field: WorkplaceSortFields!
+  nulls: SortNulls
+}
+
+enum WorkplaceSortFields {
+  code
+  createdAt
+  deletedAt
+  email
+  name
+  phone
+  updatedAt
+}
+
+input WorkplaceUpdateFilter {
+  and: [WorkplaceUpdateFilter!]
+  code: StringFieldComparison
+  createdAt: DateFieldComparison
+  deletedAt: DateFieldComparison
+  email: StringFieldComparison
+  name: StringFieldComparison
+  or: [WorkplaceUpdateFilter!]
+  phone: StringFieldComparison
+  updatedAt: DateFieldComparison
 }

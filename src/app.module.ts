@@ -5,6 +5,13 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 import { AppService } from './app.service';
 import { StudentsModule } from './modules/students/students.module';
+import { WorkplaceModule } from './modules/workplaces/workplace.module';
+import { UniversitiesModule } from './modules/universities/universities.module';
+import { AddressesModule } from './modules/addresses/addresses.module';
+import { SpecialtiesModule } from './modules/specialties/specialties.module';
+import { ProceduresModule } from './modules/procedures/procedures.module';
+import { ProjectsModule } from './modules/projects/projects.module';
+import { AdminsWorkplacesModule } from './modules/admins-workplaces/admins-workplaces.module';
 
 @Module({
   imports: [
@@ -15,6 +22,13 @@ import { StudentsModule } from './modules/students/students.module';
       sortSchema: true,
     }),
     StudentsModule,
+    WorkplaceModule,
+    UniversitiesModule,
+    AddressesModule,
+    SpecialtiesModule,
+    ProceduresModule,
+    ProjectsModule,
+    AdminsWorkplacesModule,
   ],
   providers: [AppService],
 })
